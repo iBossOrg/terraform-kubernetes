@@ -1,22 +1,16 @@
 variable "annotations" {
-  description = "Annotations"
+  description = "namespace annotations"
   type        = map(string)
   default     = null
 }
 
-variable "dependencies" {
-  description = "Dependencies to be created before this module"
-  type        = list(string)
-  default     = null
-}
-
 variable "labels" {
-  description = "Labels"
+  description = "Namespace labels"
   type        = map(string)
   default     = null
 }
 
 variable "name" {
-  description = "Namespace name"
+  description = "Name of the namespace"
   type        = string
 }

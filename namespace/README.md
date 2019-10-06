@@ -19,13 +19,8 @@ On other platforms, install the appropriate packages.
 Copy and paste into your Terraform configuration and insert input variables:
 ```hcl
 module "my_namespace" {
-  source   = "github.com/iBossOrg/terraform-kubernetes/namespace"
-  name = "my-namespace"
-  # Insert optional input variables here
-}
-
-resource "kubernetes_deploy" "my_deploy" {
-  namespace = module.my_namespace.name
+  source = "github.com/iBossOrg/terraform-kubernetes/namespace"
+  # Insert input variables here
 }
 ```
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
