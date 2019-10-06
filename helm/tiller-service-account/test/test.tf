@@ -4,6 +4,10 @@ module "tiller_service_account" {
   source = "../"
 }
 
+output "tiller_service_account" {
+  value = module.tiller_service_account
+}
+
 ################################################################################
 
 resource "null_resource" "tiller_service_account_test" {
