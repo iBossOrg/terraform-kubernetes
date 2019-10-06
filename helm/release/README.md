@@ -19,19 +19,58 @@ On other platforms, install the appropriate packages.
 
 Copy and paste into your Terraform module:
 ```hcl
-variable "release" {
-  description = "Helm release configuration"
-  default = null
-}
-
 provider "helm" {}
 
+variable "repository" {
+  description = "Helm repository configuration"
+  default     = {}
+}
+
+variable "release" {
+  description = "Helm release configuration"
+  default     = {}
+}
+
+variable "set" {
+  description = "Chart values"
+  default     = {}
+}
+
+variable "set_sensitive" {
+  description = "Chart sensitive values"
+  default     = {}
+}
+
+variable "set_string" {
+  description = "Chart string values"
+  default     = {}
+}
+
+locals {
+  default = {
+    name = "my-chart"
+    # ...
+  }
+  override = {
+    chart = "my-chart"
+    # ...
+
+    repository = {
+      # ...
+    }
+  }
+}
+
 module "my_chart" {
-  source    = "github.com/iBossOrg/terraform-kubernetes/helm/release"
-  providers = { helm = "helm" }
-  release   = var.release
-  override  = { chart = "my_chart" }
-  # Insert optional input variables here
+  source        = "github.com/iBossOrg/terraform-kubernetes/helm/release"
+  providers     = { helm = "helm" }
+  repository    = var.repository
+  default       = local.default
+  release       = var.release
+  override      = local.override
+  set           = var.set
+  set_sensitive = var.set_sensitive
+  set_string    = var.set_string
 }
 ```
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
