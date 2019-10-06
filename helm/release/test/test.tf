@@ -14,7 +14,7 @@ module "tiller_service_account" {
 
 ################################################################################
 
-module "kubernetes-dashboard" {
+module "kubernetes_dashboard" {
   source    = "../"
   providers = { helm = "helm" }
   default   = { name = "kubernetes-dashboard" }
@@ -22,8 +22,8 @@ module "kubernetes-dashboard" {
   set       = { "rbac.create" = true }
 }
 
-output "kubernetes-dashboard" {
-  value = module.kubernetes-dashboard
+output "kubernetes_dashboard" {
+  value = module.kubernetes_dashboard
 }
 
 ################################################################################
@@ -31,7 +31,7 @@ output "kubernetes-dashboard" {
 resource "null_resource" "test" {
   triggers = {
     always     = uuid()
-    depends_on = module.kubernetes-dashboard.result.name
+    depends_on = module.kubernetes_dashboard.result.name
   }
   provisioner "local-exec" {
     command = <<-EOF
