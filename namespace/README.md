@@ -20,6 +20,7 @@ Copy and paste into your Terraform configuration and insert input variables:
 ```hcl
 module "my_namespace" {
   source = "github.com/iBossOrg/terraform-kubernetes/namespace"
+  name = "my_namespace"
   # Insert input variables here
 }
 ```
