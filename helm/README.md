@@ -4,7 +4,8 @@ Support for [Helm](https://helm.sh) package manager.
 
 ## Terraform modules
 
-* [Tiller Service Account](tiller-service-account/README.md) - Manages [Tiller's](https://helm.sh/docs/using_helm/#tiller-and-role-based-access-control) service account.
+* [Helm Release](release/README.md) - Simplify the use of Helm release in modules.
+* [Tiller Service Account](tiller-service-account/README.md) - Manages [Tiller service account](https://helm.sh/docs/using_helm/#tiller-and-role-based-access-control).
 
 ## Prerequisities
 
@@ -31,8 +32,8 @@ provider "helm" {
 }
 
 module "tiller_service_account" {
-  source   = "github.com/iBossOrg/terraform-kubernetes/helm/tiller_service_account"
-  # Insert optional input variables here
+  source = "github.com/iBossOrg/terraform-kubernetes/helm/tiller_service_account"
+  # Insert input variables here
 }
 ```
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

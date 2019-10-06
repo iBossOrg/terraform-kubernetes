@@ -2,8 +2,12 @@
 
 ## Terraform modules
 
-* [Helm](helm/README.md) - Support for [Helm](https://helm.sh) package manager.
+General modules:
 * [Namespace](namespace/README.md) - Manages Kubernetes namespace.
+
+[Helm modules](helm/README.md):
+* [Helm Release](helm/release/README.md) - Simplify the use of Helm release in modules.
+* [Tiller Service Account](helm/tiller-service-account/README.md) - Manages [Tiller service account](https://helm.sh/docs/using_helm/#tiller-and-role-based-access-control).
 
 ## Reporting Issues
 
@@ -22,6 +26,8 @@ On Apple macOS, install the [Homebrew](https://brew.sh) package manager and the 
 brew install pre-commit
 brew install terraform
 brew install terraform-docs
+brew install kubernetes-cli
+brew install kubernetes-helm
 ```
 On other platforms, install the appropriate packages.
 
