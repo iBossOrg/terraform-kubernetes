@@ -1,6 +1,6 @@
 # Tiller Service Account module
 
-Manages [Tiller's](https://helm.sh/docs/using_helm/#tiller-and-role-based-access-control) service account.
+Manages [Tiller service account](https://helm.sh/docs/using_helm/#tiller-and-role-based-access-control).
 
 ## Prerequisities
 
@@ -10,6 +10,8 @@ On Apple macOS, install the [Homebrew](https://brew.sh) package manager and
 the following packages:
 ```bash
 brew install terraform
+brew install kubernetes-cli
+brew install kubernetes-helm
 ```
 On other platforms, install the appropriate packages.
 
@@ -26,8 +28,8 @@ provider "helm" {
 }
 
 module "tiller_service_account" {
-  source   = "github.com/iBossOrg/terraform-kubernetes/helm/tiller_service_account"
-  # Insert optional input variables here
+  source = "github.com/iBossOrg/terraform-kubernetes/helm/tiller-service-account"
+  # Insert input variables here
 }
 ```
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
