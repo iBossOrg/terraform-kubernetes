@@ -2,15 +2,11 @@
 
 module "my_namespace" {
   source = "../"
-  name   = "my-namespace"
+  #name_prefix = "my-namespace-"
 }
 
-output "my_namespace_id" {
-  value = module.my_namespace.id
-}
-
-output "my_namespace_metadata" {
-  value = module.my_namespace.metadata
+output "my_namespace" {
+  value = module.my_namespace
 }
 
 ################################################################################
@@ -20,7 +16,7 @@ resource "null_resource" "test" {
   provisioner "local-exec" {
     command = <<-EOF
       set -ex
-      kubectl get namespace ${module.my_namespace.metadata.name}
+      kubectl get namespace ${module.my_namespace.name}
     EOF
   }
 }

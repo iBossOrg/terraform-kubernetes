@@ -1,16 +1,14 @@
-data "null_data_source" "namespace" {
-  inputs = {
-    id       = kubernetes_namespace.namespace.id
-    metadata = jsonencode(kubernetes_namespace.namespace.metadata.0)
-  }
+output "generation" {
+  description = "Namespace generation"
+  value       = kubernetes_namespace.namespace.metadata.0.generation
 }
 
 output "id" {
-  description = "Name of the namespace"
-  value       = data.null_data_source.namespace.outputs.id
+  description = "Namespace id"
+  value       = kubernetes_namespace.namespace.id
 }
 
-output "metadata" {
-  description = "Metadata of the namespace"
-  value       = jsondecode(data.null_data_source.namespace.outputs.metadata)
+output "name" {
+  description = "Namespace name"
+  value       = kubernetes_namespace.namespace.metadata.0.name
 }

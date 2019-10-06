@@ -13,4 +13,11 @@ variable "labels" {
 variable "name" {
   description = "Name of the namespace"
   type        = string
+  default     = null
+}
+
+variable "name_prefix" {
+  description = "Name prefix of the namespace"
+  type        = string
+  default     = null
 }
