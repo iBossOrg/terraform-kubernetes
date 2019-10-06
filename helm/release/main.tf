@@ -1,7 +1,7 @@
 locals {
-  default  = var.default != null ? var.default : {}
-  override = var.override != null ? var.override : {}
-  release  = var.release != null ? var.release : {}
+  default  = var.default != null ? tomap(var.default) : {}
+  override = var.override != null ? tomap(var.override) : {}
+  release  = var.release != null ? tomap(var.release) : {}
   config   = merge(local.default, local.release, local.override)
 
   name  = lookup(local.config, "name", null)
