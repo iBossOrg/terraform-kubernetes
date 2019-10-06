@@ -1,8 +1,8 @@
 ################################################################################
 
 module "my_namespace" {
-  source = "../"
-  #name_prefix = "my-namespace-"
+  source      = "../"
+  name_prefix = "my-namespace-"
 }
 
 output "my_namespace" {
