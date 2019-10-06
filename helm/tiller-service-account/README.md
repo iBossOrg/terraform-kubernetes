@@ -1,6 +1,6 @@
-# Tiller module
+# Tiller Service Account module
 
-Manages Helm's [Tiller](https://helm.sh).
+Manages [Tiller's](https://helm.sh/docs/using_helm/#tiller-and-role-based-access-control) service account.
 
 ## Prerequisities
 
@@ -17,8 +17,16 @@ On other platforms, install the appropriate packages.
 
 Copy and paste into your Terraform configuration and insert input variables:
 ```hcl
-module "tiller" {
-  source   = "github.com/iBossOrg/terraform-kubernetes/tiller"
+provider "helm" {
+  init_helm_home  = true
+  install_tiller  = true
+  service_account = "tiller"
+  max_history     = 200
+  # insecure      = true
+}
+
+module "tiller_service_account" {
+  source   = "github.com/iBossOrg/terraform-kubernetes/helm/tiller_service_account"
   # Insert optional input variables here
 }
 ```

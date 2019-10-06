@@ -2,25 +2,21 @@
 
 ## Terraform modules
 
-* [Tiller](tiller/README.md) - Manages Helm's [Tiller](https://helm.sh).
+* [Helm](helm/README.md) - Support for [Helm](https://helm.sh) package manager.
 
 ## Reporting Issues
 
-Issues can be reported by using [GitHub Issues](/../../issues). Full details on
-how to report issues can be found in the [Contribution Guidelines](CONTRIBUTING.md).
+Issues can be reported by using [GitHub Issues](/../../issues). Full details on how to report issues can be found in the [Contribution Guidelines](CONTRIBUTING.md).
 
 ## Contributing
 
-Please read the [Contribution Guidelines](CONTRIBUTING.md), and ensure you are
-signing all your commits with
-[DCO sign-off](CONTRIBUTING.md#developer-certification-of-origin-dco).
+Please read the [Contribution Guidelines](CONTRIBUTING.md), and ensure you are signing all your commits with [DCO sign-off](CONTRIBUTING.md#developer-certification-of-origin-dco).
 
 ### Install dependencies
 
 Obtain access to existing Kubernetes cluster.
 
-On Apple macOS, install the [Homebrew](https://brew.sh) package manager and
-the following packages:
+On Apple macOS, install the [Homebrew](https://brew.sh) package manager and the following packages:
 ```bash
 brew install pre-commit
 brew install terraform
@@ -60,10 +56,8 @@ make clean            # Remove all generated files
 
 * [Petr Řehoř](https://github.com/prehor) - Initial work.
 
-See also the list of [contributors](/../../contributors) who have participated
-in this project.
+See also the list of [contributors](/../../contributors) who have participated in this project.
 
 ## License
 
-This project is licensed under the Apache License, Version 2.0 - see the
-[LICENSE](LICENSE) file for details.
+This project is licensed under the Apache License, Version 2.0 - see the [LICENSE](LICENSE) file for details.
