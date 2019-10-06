@@ -3,6 +3,7 @@
 ## Terraform modules
 
 * [Helm](helm/README.md) - Support for [Helm](https://helm.sh) package manager.
+* [Namespace](namespace/README.md) - Manages Kubernetes namespace.
 
 ## Reporting Issues
 
